@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: Sam Soffes
+Contact:   sam@samsoff.es
+Twitter:   @samsoffes
+From:      San Francisco
+
+Developer: Steve Derico
+Contact:   steve@stevederico.com
+Twitter:   @stevederico
+From:      San Francisco

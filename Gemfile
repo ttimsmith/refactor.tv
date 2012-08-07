@@ -5,6 +5,8 @@ gem 'rails', '3.2.7'
 gem 'pg'
 gem 'thin'
 
+gem 'redcarpet'
+
 group :assets do
   # Stylesheet
   gem 'sass', '~> 3.2.0.alpha.278'

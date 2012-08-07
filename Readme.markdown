@@ -16,7 +16,7 @@ We use Postgres locally. If you don't have it already, you'll need to install Po
 
     $ brew install postgresql
 
-(Be sure and read the caveats after it installs. You must run some additional commands to get it to complete the installation.)
+(Be sure and read the caveats after it installs. You must run some additional commands to get it to complete the installation.) You can also use [Postgres.app](http://postgresapp.com) if that's more your thing.
 
 Run the following queries to setup the user in Postgres:
 

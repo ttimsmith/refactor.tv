@@ -15,6 +15,9 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'jquery-rails'
+  
+  # Distribution
+  gem 'asset_sync'
 end
 
 group :development do

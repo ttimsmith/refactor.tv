@@ -14,4 +14,14 @@ module LayoutHelper
   def gauges(code)
     %Q{<script type="text/javascript">var _gauges=_gauges||[];(function(){var t=document.createElement('script');t.async=true;t.id='gauges-tracker';t.setAttribute('data-site-id','#{code}');t.src='//secure.gaug.es/track.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(t, s);})();</script>}.html_safe if Rails.env.production?
   end
+  
+  # This is terrible
+  def image_url(source)
+    abs_path = image_path(source)
+    unless abs_path =~ /\Ahttp/
+      # TODO: Use the asset host
+      abs_path = "http://#{request.host_with_port}#{abs_path}"
+    end
+    abs_path
+  end
 end

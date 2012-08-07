@@ -6,8 +6,17 @@ gem 'pg'
 gem 'thin'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  # Stylesheet
+  gem 'sass', '~> 3.2.0.alpha.278'
+  gem 'sass-rails'
+  gem 'bourbon'
+  
+  # Javascript
+  gem 'coffee-rails'
+  gem 'uglifier'
   gem 'jquery-rails'
+end
+
+group :development do
+  gem 'heroku'
 end

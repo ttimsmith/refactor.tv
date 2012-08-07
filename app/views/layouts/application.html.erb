@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Refactor</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <meta charset="utf-8" />
+  <title><%= (yield(:title) && !yield(:title).empty? ? yield(:title) : 'Refactor.tv') %></title>
+  <link rel="shortcut icon" href="<%= image_path('favicon.ico') %>" />
+  <link rel="author" type="text/plain" href="http://refactor.tv/humans.txt" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <%= stylesheet_link_tag 'application' %>
+  <meta property="og:site_name" content="Refactor.tv" />
+  <%= yield(:head) -%>
 </head>
 <body>
-
-<%= yield %>
-
+  <header>
+    <h1><%= link_to 'Refactor.tv', root_url %></h1>
+    <p>A weekly video podcast about awesome.</p>
+  </header>
+  <section>
+  <%= yield %>
+  </section>
+  <footer>
+    <p>Copyright &copy; 2012 <a href="http://stevederico.com" rel="external nofollow">Steve Derico</a> &amp; <a href="http://samsoff.es" rel="external nofollow">Sam Soffes</a></p>
+  </footer>
+  <%= yield :end %>
+  <%= gauges '5020a1daf5a1f5249d000001' %>
 </body>
 </html>

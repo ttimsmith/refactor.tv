@@ -23,3 +23,7 @@ end
 group :development do
   gem 'heroku'
 end
+
+group :production do
+  gem 'dalli'
+end

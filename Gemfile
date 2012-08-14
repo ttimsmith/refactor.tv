@@ -12,18 +12,20 @@ group :assets do
   gem 'sass', '~> 3.2.0.alpha.278'
   gem 'sass-rails'
   gem 'bourbon'
-  
+
   # Javascript
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'jquery-rails'
-  
+
   # Distribution
   gem 'asset_sync'
 end
 
 group :development do
   gem 'heroku'
+  gem 'taps'
+  gem 'sqlite3'
 end
 
 group :production do

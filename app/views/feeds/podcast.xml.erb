@@ -11,7 +11,7 @@ xmlns:media="http://search.yahoo.com/mrss/">
 
   <channel>
     <title>Refactor.tv</title>
-    <atom:link href="http://refactor.tv/feed/<%= @feed_type %>" rel="self" type="application/rss+xml" />
+    <atom:link href="http://refactor.tv/feeds/<%= @feed_type %>" rel="self" type="application/rss+xml" />
     <link>http://refactor.tv</link>
     <description>Refactor.tv is a weekly podcast discussing web and mobile App Development, open-source software, and beer. Brought to you from San Francisco by two independent software developers, Sam Soffes and Steve Derico.</description>
     <language>en</language>
@@ -43,7 +43,7 @@ xmlns:media="http://search.yahoo.com/mrss/">
     <itunes:block>no</itunes:block>
     <itunes:explicit>no</itunes:explicit>
     <itunes:image href="<%= image_url('art_512.png') %>" />
-    
+
     <%= render @episode_files %>
   </channel>
 </rss>

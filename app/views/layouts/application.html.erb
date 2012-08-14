@@ -14,6 +14,7 @@
   <header>
     <h1><%= link_to 'Refactor.tv', root_url %></h1>
     <p>A weekly video podcast. Find out <%= link_to 'more', about_url %>.</p>
+    <p>Subscribe: <%= link_to 'HD', feeds_url('video-720') %> <%= link_to 'SD', feeds_url('video-480') %> <%= link_to 'Audio', feeds_url('audio') %>
   </header>
   <section>
   <%= yield %>

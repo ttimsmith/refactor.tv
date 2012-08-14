@@ -6,7 +6,7 @@
   <li>
     <a href="<%= episode_url(episode) %>" title="Episode #<%= episode.position %>: <%= episode.title %>"><img src="http://assets.refactor.tv/episodes/Episode<%= episode.position.to_s.rjust(3, '0') %>-Poster.png" alt="Episode #<%= episode.position %>: <%= episode.title %>" width="150" height="150" /></a>
     <div>
-      <h2>Episode #<%= episode.position %> <span><%= episode.title %></span></h2>
+      <h2><a href="<%= episode_url(episode) %>" title="Episode #<%= episode.position %>: <%= episode.title %>">Episode #<%= episode.position %> <span><%= episode.title %></span></a></h2>
       <p><%= episode.summary %> <%= link_to 'Watch Episode', episode %></p>
     </div>
   </li>

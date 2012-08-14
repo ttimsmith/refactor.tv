@@ -1,18 +1,24 @@
 <h2>About</h2>
 <p>Refactor.tv is a weekly podcast discussing web and mobile App Development, open-source software, and beer. Brought to you from San Francisco by two independent software developers <%= link_to "Sam Soffes", "http://www.samsoff.es" %>  and <%= link_to "Steve Derico", "http://www.stevederico.com" %>.</p>
 
-<%= image_tag("http://assets.samsoff.es/images/Sam-Soffes.jpg", size: "150x150")%>
+<div class="episode-header">
+  <%= link_to image_tag('http://assets.refactor.tv/images/Sam.jpg', width: 150, height: 150), 'http://samsoff.es' %>
+  <div>
+    <h3>Sam Soffes</h3>
+    <p>Sam is a developer &amp; designer at <a href="http://nothingmagical.com" rel="external nofollow">Nothing Magical</a>. He lives in San Francisco and is a self-proclaimed burger connoisseur. Most of Sam's time is spent working on <a href="http://cheddarapp.com" rel="external nofollow">Cheddar</a>.</p>
+    <p><%= follow_button 'samsoffes' %></p>
+  </div>
+</div>
 
-<h3>Sam Soffes</h3>
-<p>Sam is an iOS and Rails software engineer, musician, wanna be designer, and burger connoisseur. He lives in San Francisco. Sam previously worked at Synthetic (the makers of <%= link_to "Hipstamatic", "http://www.hipstamatic.com" %>). Now, He is bootstrapping a company and working on <%= link_to "Cheddar", "http://www.cheddarapp.com"%>. Follow Sam at <%= link_to "@samsoffes", "http://www.twitter.com/samsoffes" %>.</p>
-
-
-<%= link_to image_tag "http://static.tumblr.com/mdnpdig/73Jm0hv40/steve_talk.jpg", width: "150" %>
-<h3>Steve Derico</h3>
-<p>Steve Derico is an iOS and Web Developer that loves to solve problems with software. He runs a small app development company called <%= link_to "Bixby Apps", "http://www.bixbyapps.com" %>. When not programming, he enjoys running, biking, and going to baseball games.You can follow Steve at <%= link_to "@stevederico", "http://www.twitter.com/stevederico" %>.</p>
+<div class="episode-header">
+  <%= link_to image_tag('http://assets.refactor.tv/images/Steve.jpg', width: 150, height: 150), 'http://stevederico.com' %>
+  <div>
+    <h3>Steve Derico</h3>
+    <p>Steve Derico is an iOS and web developer that loves to solve problems with software. He runs a small app development company called <a href="http://bixbyapps.com" rel="external nofollow">Bixby Apps</a>.</p>
+    <p><%= follow_button 'stevederico' %></p>
+  </div>
+</div>
 
 <h2>Stay in Touch</h2>
-<ul>
-  <li>Email - <%= link_to "hi@refactor.tv", "mailto:hi@refactor.tv"%></li>
-  <li>Twitter - <%= link_to "@refactortv", "http://www.twitter.com/refactortv"%></li>
-</ul>
+<p>Have anything you want to hear us talk about, watch us drink, or just want to say hi, email us at <%= link_to "hi@refactor.tv", "mailto:hi@refactor.tv"%>.</p>
+<p><%= follow_button 'refactortv' %></p>

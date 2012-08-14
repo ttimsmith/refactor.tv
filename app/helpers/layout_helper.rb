@@ -14,7 +14,15 @@ module LayoutHelper
   def gauges(code)
     %Q{<script type="text/javascript">var _gauges=_gauges||[];(function(){var t=document.createElement('script');t.async=true;t.id='gauges-tracker';t.setAttribute('data-site-id','#{code}');t.src='//secure.gaug.es/track.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(t, s);})();</script>}.html_safe if Rails.env.production?
   end
-  
+
+  def follow_button(username, options = {})
+    options_string = options.map { |key, value| "data-#{key}=\"#{value}\"" }.join(' ')
+    options_string = " #{options_string}" if options_string.length > 0
+
+    %Q{<a href="https://twitter.com/#{username}" class="twitter-follow-button" data-show-count="false"#{options_string}>Follow @#{username}</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>}.html_safe
+  end
+
   # This is terrible
   def image_url(source)
     abs_path = image_path(source)

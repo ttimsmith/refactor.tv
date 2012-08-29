@@ -6,6 +6,7 @@ class FeedsController < ApplicationController
       head :not_found and return
     end
 
+    @feed_name = @episode_files.first.display_name
     render template: 'feeds/podcast', format: 'xml'
   end
 end

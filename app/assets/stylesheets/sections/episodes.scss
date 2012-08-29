@@ -32,7 +32,7 @@ ul.episodes li, div.episode-header {
 
 a.video {
   background: 0 30% no-repeat;
-  width: 640px;
+  width: 100%;
   height: 120px;
   display: block;
   color: #fff;
@@ -74,15 +74,15 @@ a.video {
   }
 
   &.hero {
-    height: 200px;
+    height: 240px;
     background: 0 20% no-repeat;
 
     span.title {
-      top: 108px;
+      top: 148px;
     }
 
     span.subtitle {
-      top: 160px;
+      top: 200px;
     }
   }
 

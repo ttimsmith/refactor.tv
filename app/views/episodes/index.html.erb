@@ -1,14 +1,28 @@
 <% if @episodes.empty? %>
 <p>Nothing to see here. Move a long.</p>
-<% else %>
+<% else; episode = @episodes.shift(1).first %>
+<a class="video hero" href="<%= url_for episode %>" style="background-image:url(http://assets.refactor.tv/episodes/<%= episode.padded_position %>/Episode<%= episode.padded_position %>-360-poster.jpg)">
+  <span class="title">Episode #<%= episode.position %></span>
+  <span class="subtitle"><%= episode.title %></span>
+  <span class="background"></span>
+</a>
+
+<h2 class="previous">Previous Episodes</h2>
+
 <ul class="episodes">
 <% @episodes.each do |episode| %>
   <li>
-    <a href="<%= episode_url(episode) %>" title="Episode #<%= episode.position %>: <%= episode.title %>"><img src="http://assets.refactor.tv/episodes/Episode<%= episode.position.to_s.rjust(3, '0') %>-Poster.png" alt="Episode #<%= episode.position %>: <%= episode.title %>" width="150" height="150" /></a>
+    <a class="video" href="<%= url_for episode %>" style="background-image:url(http://assets.refactor.tv/episodes/<%= episode.padded_position %>/Episode<%= episode.padded_position %>-360-poster.jpg)">
+      <span class="title">Episode #<%= episode.position %></span>
+      <span class="subtitle"><%= episode.title %></span>
+      <span class="background"></span>
+    </a>
+
+    <!--<a href="<%= episode_url(episode) %>" title="Episode #<%= episode.position %>: <%= episode.title %>"><img src="http://assets.refactor.tv/episodes/Episode<%= episode.padded_position %>-Poster.png" alt="Episode #<%= episode.position %>: <%= episode.title %>" width="150" height="150" /></a>
     <div>
       <h2><a href="<%= episode_url(episode) %>" title="Episode #<%= episode.position %>: <%= episode.title %>">Episode #<%= episode.position %> <span><%= episode.title %></span></a></h2>
       <p><%= episode.summary %> <%= link_to 'Watch Episode', episode %></p>
-    </div>
+    </div>-->
   </li>
 <% end %>
 </ul>

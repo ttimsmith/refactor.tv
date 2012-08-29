@@ -1,10 +1,11 @@
-<div class="episode-header">
-  <a href="<%= episode_url(@episode) %>" title="Episode #<%= @episode.position %>: <%= @episode.title %>"><img src="http://assets.refactor.tv/episodes/Episode<%= @episode.position.to_s.rjust(3, '0') %>-Poster.png" alt="Episode #<%= @episode.position %>: <%= @episode.title %>" width="150" height="150" /></a>
-  <div>
-    <h2>Episode #<%= @episode.position %> <span><%= @episode.title %></span></h2>
-    <p><%= @episode.summary %></p>
-  </div>
-</div>
+<% content_for :head do %>
+<script type="text/javascript" src="http://cdn.sublimevideo.net/js/2r5co3cd.js"></script>
+<% end %>
+
+<p><%= video_player @episode %></p>
+
+<h2>Episode #<%= @episode.position %> <span><%= @episode.title %></span></h2>
+<p><%= @episode.summary %></p>
 
 <h3>Download</h3>
 <ul style="margin-bottom:3em">

@@ -12,15 +12,17 @@
 </head>
 <body>
   <header>
-    <h1><%= link_to 'Refactor.tv', root_url %></h1>
-    <p>A weekly video podcast. Find out <%= link_to 'more', about_url %>.</p>
-    <p>Subscribe: <%= link_to 'HD', feeds_url('video-720') %> <%= link_to 'SD', feeds_url('video-480') %> <%= link_to 'Audio', feeds_url('audio-m4a') %> &mdash; <a href="http://itunes.apple.com/us/podcast/refactor.tv/id553226099?mt=2" rel="external nofollow">iTunes</a></p>
+    <div>
+      <h1><%= link_to 'Refactor.tv', root_url %></h1>
+      <p>A weekly video podcast. Find out <%= link_to 'more', about_url %>.</p>
+      <!--<p>Subscribe: <%= link_to 'HD', feeds_url('video-720') %> <%= link_to 'SD', feeds_url('video-480') %> <%= link_to 'Audio', feeds_url('audio-m4a') %> &mdash; <a href="http://itunes.apple.com/us/podcast/refactor.tv/id553226099?mt=2" rel="external nofollow">iTunes</a></p>-->
+    </div>
   </header>
   <section>
   <%= yield %>
   </section>
   <footer>
-    <p>Copyright &copy; 2012 <a href="http://stevederico.com" rel="external nofollow">Steve Derico</a> &amp; <a href="http://samsoff.es" rel="external nofollow">Sam Soffes</a></p>
+    <p>Copyright &copy; 2012 <a href="http://samsoff.es" rel="external nofollow">Sam Soffes</a> &amp; <a href="http://stevederico.com" rel="external nofollow">Steve Derico</a></p>
   </footer>
   <%= yield :end %>
   <%= gauges '5020a1daf5a1f5249d000001' %>

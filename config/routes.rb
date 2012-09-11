@@ -10,4 +10,9 @@ Refactor::Application.routes.draw do
 
   # Episode
   get ':id', to: 'episodes#show', as: 'episode'
+
+  # Admin
+  namespace :admin do
+    resources :episodes
+  end
 end

@@ -4,6 +4,14 @@ class Admin::EpisodesController < Admin::BaseController
     @episodes = Episode.recent.all
   end
 
+  def update
+    if @episode.update_attributes(params[:episode])
+      redirect_to [:admin, @episode]
+    else
+      render :edit
+    end
+  end
+
 private
 
   def find_episode

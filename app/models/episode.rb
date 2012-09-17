@@ -1,3 +1,5 @@
+require 'redcarpet'
+
 class Episode < ActiveRecord::Base
   attr_accessible :notes, :position, :published_at, :seconds, :title, :summary
 
@@ -18,6 +20,10 @@ class Episode < ActiveRecord::Base
 
   def padded_position
     self.position.to_s.rjust(3, '0')
+  end
+
+  def published?
+    self.published_at <= Time.now.utc
   end
 
 private

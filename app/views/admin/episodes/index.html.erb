@@ -1,7 +1,11 @@
 <h2>All Episodes</h2>
 
+<% if @episodes.empty? %>
+<p>Nothing to see here. Move a long.</p>
+<% else %>
 <ul>
   <% @episodes.each do |episode| %>
-  <li>#<%= episode.position %> <%= episode.title %></li>
+  <li><%= link_to "##{episode.position} #{episode.title}", [:admin, episode] %></li>
   <% end %>
 </ul>
+<% end %>

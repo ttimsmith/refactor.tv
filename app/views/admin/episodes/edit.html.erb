@@ -1,0 +1,23 @@
+<%= form_for [:admin, @episode] do |f| %>
+  <dl>
+    <dt><%= f.label :position %></dt>
+    <dd><%= f.text_field :position %></dd>
+
+    <dt><%= f.label :title %></dt>
+    <dd><%= f.text_field :title %></dd>
+
+    <dt><%= f.label :summary %></dt>
+    <dd><%= f.text_area :summary %></dd>
+
+    <dt><%= f.label :note, 'Show Notes' %></dt>
+    <dd><%= f.text_area :notes %></dd>
+
+    <dt><%= f.label :seconds %></dt>
+    <dd><%= f.text_field :seconds %></dd>
+
+    <dt><%= f.label :published_at %></dt>
+    <dd><%= f.text_field :published_at %></dd>
+  </dl>
+
+  <p><button type="submit">Save</button></p>
+<% end %>

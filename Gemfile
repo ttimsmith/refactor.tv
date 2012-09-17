@@ -1,11 +1,19 @@
 source 'https://rubygems.org'
+
+# The latest version of Ruby
 ruby '1.9.3'
 
+# The lastest version of Rails
 gem 'rails', '3.2.7'
+
+# Postgres
 gem 'pg'
+
+# EventMachine-based web server
 gem 'thin'
 
-gem 'redcarpet'
+# Markdown
+gem 'redcarpet', require: false
 
 group :assets do
   # Stylesheet
@@ -22,12 +30,17 @@ group :assets do
   gem 'asset_sync'
 end
 
+# Only used in development
 group :development do
-  gem 'heroku'
-  gem 'taps'
-  gem 'sqlite3'
+  # Heroku deployment
+  gem 'heroku', require: false
+
+  # Hide asset requests from developmenet logs
+  gem 'quiet_assets'
 end
 
+# Only used in production
 group :production do
+  # Memcache client. Used for various caching
   gem 'dalli'
 end

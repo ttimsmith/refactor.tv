@@ -34,7 +34,7 @@ module Refactor
     # config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.
-    config.encoding = "utf-8"
+    config.encoding = 'utf-8'
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
@@ -58,5 +58,8 @@ module Refactor
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.secret_token = '77c4609c7e9eb0f6603d3c61cf4e17740c56e7a369491c34bca08fa681750839d7fb8e38c57b960a008d8e132a4f578674c6d8b26816b233a0098696331f3fec'
+    config.session_store :cookie_store, key: '_Refactor_session'
   end
 end

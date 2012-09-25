@@ -1,0 +1,46 @@
+<%= form_for [:admin, @episode] do |f| %>
+  <% if @episode.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@episode.errors.count, "error") %> prohibited this episode from being saved:</h2>
+
+    <ul>
+    <% @episode.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <dl>
+    <dt><%= f.label :position, 'Number' %></dt>
+    <dd><%= f.text_field :position %></dd>
+
+    <dt><%= f.label :title %></dt>
+    <dd><%= f.text_field :title %></dd>
+
+    <dt><%= f.label :summary %></dt>
+    <dd><%= f.text_area :summary %></dd>
+
+    <dt><%= f.label :note, 'Show Notes' %></dt>
+    <dd><%= f.text_area :notes %></dd>
+
+    <dt><%= f.label :seconds %></dt>
+    <dd><%= f.text_field :seconds %></dd>
+
+    <dt><%= f.label :published_at %></dt>
+    <dd><%= f.datetime_select :published_at %></dd>
+  </dl>
+
+  <dl>
+    <dt><label for="hd_size">HD File Size</label></dt>
+    <dd><input type="text" name="episode_file[hd_size]" id="hd_size" /></dd>
+
+    <dt><label for="sd_size">SD File Size</label></dt>
+    <dd><input type="text" name="episode_file[sd_size]" id="sd_size" /></dd>
+
+    <dt><label for="audio_size">Audio File Size</label></dt>
+    <dd><input type="text" name="episode_file[audio_size]" id="audio_size" /></dd>
+  </dl>
+
+  <p><button type="submit"><%= @episode.new_record? ? 'Create' : 'Update' %></button></p>
+<% end %>

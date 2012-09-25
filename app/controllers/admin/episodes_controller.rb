@@ -4,6 +4,19 @@ class Admin::EpisodesController < Admin::BaseController
     @episodes = Episode.recent.all
   end
 
+  def new
+    @episode = Episode.new
+    @episode.position = Episode.order('position ASC').last.position + 1
+  end
+
+  def create
+    if @episode = Episode.create(params[:episode])
+      redirect_to [:admin, @episode] and return
+    end
+
+    render :new
+  end
+
   def update
     if @episode.update_attributes(params[:episode])
       redirect_to [:admin, @episode]

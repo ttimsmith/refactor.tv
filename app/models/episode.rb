@@ -23,7 +23,7 @@ class Episode < ActiveRecord::Base
   end
 
   def published?
-    self.published_at <= Time.now.utc
+    self.published_at and self.published_at <= Time.now.utc
   end
 
 private

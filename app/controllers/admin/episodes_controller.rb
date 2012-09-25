@@ -11,6 +11,7 @@ class Admin::EpisodesController < Admin::BaseController
 
   def create
     if @episode = Episode.create(params[:episode])
+      @episode.update_file_sizes(params[:episode_file])
       redirect_to [:admin, @episode] and return
     end
 
@@ -19,10 +20,16 @@ class Admin::EpisodesController < Admin::BaseController
 
   def update
     if @episode.update_attributes(params[:episode])
+      @episode.update_file_sizes(params[:episode_file])
       redirect_to [:admin, @episode]
     else
       render :edit
     end
+  end
+
+  def destroy
+    @episode.destroy
+    redirect_to admin_episodes_url
   end
 
 private

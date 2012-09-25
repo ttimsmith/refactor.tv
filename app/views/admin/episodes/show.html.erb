@@ -6,7 +6,6 @@
   <span>Unpublished</span>
   <% end %>
   <%= link_to 'Edit', edit_admin_episode_url(@episode) %>
-  <%= link_to 'Destroy', [:admin, @episode] %>
 </p>
 <p><%= @episode.summary %></p>
 
@@ -19,3 +18,5 @@
 
 <h3>Show Notes</h3>
 <div id="notes"><%= @episode.notes_html.html_safe %></div>
+
+<p><%= button_to 'Delete Episode', [:admin, @episode], method: :delete, data: {confirm: 'Are you sure?'} %></p>

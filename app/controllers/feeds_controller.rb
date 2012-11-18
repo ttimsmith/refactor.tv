@@ -1,7 +1,7 @@
 class FeedsController < ApplicationController
   def show
     @feed_type = params[:file_type]
-    @episode_files = EpisodeFile.where(file_type: @feed_type)
+    @episode_files = EpisodeFile.published_with_type(@feed_type)
     if @episode_files.blank?
       head :not_found and return
     end

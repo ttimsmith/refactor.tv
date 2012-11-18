@@ -5,6 +5,10 @@ class EpisodeFile < ActiveRecord::Base
 
   validates_presence_of :episode_id
 
+  def self.published_with_type(file_type)
+    self.joins(:episode).order('episodes.position ASC').where('episodes.published_at <= ? AND file_type = ?', Time.now.utc, file_type)
+  end
+
   def display_name
     case self.file_type
     when 'video-720'

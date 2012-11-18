@@ -1,7 +1,7 @@
 /* TEAM */
 Developer: Sam Soffes
-Contact:   sam@samsoff.es
-Twitter:   @samsoffes
+Contact:   sam@soff.es
+Twitter:   @soffes
 From:      San Francisco
 
 Developer: Steve Derico

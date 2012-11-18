@@ -26,7 +26,7 @@
   <%= yield %>
   </section>
   <footer>
-    <p>Copyright &copy; 2012 <a href="http://samsoff.es" rel="external nofollow">Sam Soffes</a> &amp; <a href="http://stevederico.com" rel="external nofollow">Steve Derico</a></p>
+    <p>Copyright &copy; <%= Date.today.year %> <a href="http://soff.es" rel="external nofollow">Sam Soffes</a> &amp; <a href="http://stevederico.com" rel="external nofollow">Steve Derico</a></p>
   </footer>
   <%= yield :end %>
   <%= javascript_include_tag 'application' %>

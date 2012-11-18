@@ -28,7 +28,7 @@
     <dd><%= f.text_field :seconds %></dd>
 
     <dt><%= f.label :published_at %></dt>
-    <dd><%= f.datetime_select :published_at %></dd>
+    <dd><%= f.datetime_select :published_at, include_blank: true, start_year: Date.today.year, end_year: Date.today.year + 1  %></dd>
   </dl>
 
   <dl>

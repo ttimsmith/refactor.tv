@@ -6,11 +6,13 @@ class Admin::EpisodesController < Admin::BaseController
 
   def new
     @episode = Episode.new
-    @episode.position = Episode.order('position ASC').last.position + 1
+    last_episode = Episode.recent.last
+    @episode.position = last_episode ? last_episode.position + 1 : 1
   end
 
   def create
-    if @episode = Episode.create(params[:episode])
+    @episode = Episode.new(params[:episode])
+    if @episode.save
       @episode.update_file_sizes(params[:episode_file])
       redirect_to [:admin, @episode] and return
     end

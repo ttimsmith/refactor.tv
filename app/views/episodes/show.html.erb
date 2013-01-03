@@ -21,7 +21,7 @@
 
 <h3>Show Notes</h3>
 <div id="notes"><%= @episode.notes_html.html_safe %></div>
-
+<h4>Published <%= @episode.published_at.localtime.to_formatted_s(:long_ordinal) %> </h4>
 <p><%= follow_button 'refactortv' %></p>
 
 <p><%= link_to '&larr; All episodes'.html_safe, root_url %></p>

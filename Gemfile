@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 # The lastest version of Rails
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.11'
 
 # Postgres
 gem 'pg'

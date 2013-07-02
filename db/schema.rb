@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130702065833) do
+ActiveRecord::Schema.define(:version => 20130702071210) do
 
   create_table "episodes", :force => true do |t|
     t.string   "title"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20130702065833) do
     t.datetime "updated_at",   :null => false
     t.text     "notes_html"
     t.integer  "vimeo_id"
-    t.string   "post_url"
+    t.string   "poster_url"
   end
 
 end

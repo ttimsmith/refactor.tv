@@ -9,15 +9,15 @@ gem 'rails', '3.2.11'
 # Postgres
 gem 'pg'
 
-# EventMachine-based web server
-gem 'thin'
+# Web server
+gem 'puma'
 
 # Markdown
-gem 'redcarpet', require: false
+gem 'redcarpet', '~> 2.1', require: false
 
 group :assets do
   # Stylesheet
-  gem 'sass', '~> 3.2.0.alpha.278'
+  gem 'sass'
   gem 'sass-rails'
   gem 'bourbon'
 

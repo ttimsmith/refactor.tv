@@ -30,24 +30,11 @@ module LayoutHelper
   end
 
   def video_player(episode, options = {})
+    return '' unless episode.vimeo_id
+
     width = (options[:width] || 640)
     height = (options[:height] || 360)
 
-    # Calculate poster size
-    poster_sizes = [360, 480, 720]
-    poster_size = poster_sizes.last
-    poster_sizes.each do |size|
-      if height <= size
-        poster_size = size
-        break
-      end
-    end
-
-    %Q{<video class="sublime" poster="http://assets.refactor.tv/episodes/#{episode.padded_position}/Episode#{episode.padded_position}-#{poster_size}-poster.jpg" width="#{width}" height="#{height}" data-name="Refactor.tv Episode ##{episode.position}" data-uid="refactortv-#{episode.position}" preload="none">
-      <source src="http://download.refactor.tv/episodes/#{episode.padded_position}/Episode#{episode.padded_position}-480.mp4" />
-      <source src="http://download.refactor.tv/episodes/#{episode.padded_position}/Episode#{episode.padded_position}-720.mp4" data-quality="hd" />
-      <source src="http://download.refactor.tv/episodes/#{episode.padded_position}/Episode#{episode.padded_position}-480.webm" />
-      <source src="http://download.refactor.tv/episodes/#{episode.padded_position}/Episode#{episode.padded_position}-720.webm" data-quality="hd" />
-    </video>}.html_safe
+    %Q{<iframe src="http://player.vimeo.com/video/#{episode.vimeo_id}?title=0&amp;byline=0&amp;portrait=0" width="#{width}" height="#{height}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}.html_safe
   end
 end

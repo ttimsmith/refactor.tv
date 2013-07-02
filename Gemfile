@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 # The latest version of Ruby
-ruby '1.9.3'
+ruby '2.0.0'
 
-# The lastest version of Rails
+# Rails
 gem 'rails', '3.2.11'
 
 # Postgres
@@ -32,9 +32,6 @@ end
 
 # Only used in development
 group :development do
-  # Heroku deployment
-  gem 'heroku', require: false
-
   # Hide asset requests from developmenet logs
   gem 'quiet_assets'
 end

@@ -211,22 +211,6 @@ body > header {
       color: #fff;
     }
   }
-
-  a.itunes {
-    @include border-radius(5px);
-    @include transition(background 0.2s ease-in-out);
-    background: rgba(59, 188, 252, 0.8);
-    padding: 10px;
-    border: 0;
-    font-weight: bold;
-    font-size: 0.9em;
-    color: #fff;
-
-    &:hover {
-      background: rgba(76, 205, 255, 0.8);
-      border: 0;
-    }
-  }
 }
 
 a.hire, a.hire:hover {

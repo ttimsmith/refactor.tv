@@ -11,19 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807073956) do
-
-  create_table "episode_files", :force => true do |t|
-    t.integer  "episode_id"
-    t.string   "file_type"
-    t.string   "content_type"
-    t.integer  "size"
-    t.string   "url"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  add_index "episode_files", ["episode_id"], :name => "index_episode_files_on_episode_id"
+ActiveRecord::Schema.define(:version => 20130702065833) do
 
   create_table "episodes", :force => true do |t|
     t.string   "title"
@@ -35,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20120807073956) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.text     "notes_html"
+    t.integer  "vimeo_id"
+    t.string   "post_url"
   end
 
 end

@@ -1,23 +1,7 @@
-<% content_for :head do %>
-<script type="text/javascript" src="http://cdn.sublimevideo.net/js/2r5co3cd.js"></script>
-<% end %>
-
-<p><%= video_player @episode %></p>
+<%= video_player @episode %>
 
 <h2>Episode #<%= @episode.position %> <span><%= @episode.title %></span></h2>
 <p><%= @episode.summary %></p>
-
-<h3>Download</h3>
-<ul style="margin-bottom:3em">
-  <% @episode.episode_files.order('size DESC').each do |file| %>
-  <li><%= link_to file.display_name, file.url %></li>
-  <% end %>
-</ul>
-
-<div class="ad">
-  <a href="http://crashlytics.com" rel="external nofollow"><img src="http://assets.refactor.tv/ads/crashlytics-300x150.png" alt="Crashlytics" /></a>
-  <p>Special thanks to our sponsor, <a href="http://crashlytics.com" rel="external nofollow">Crashlytics</a> for sponsoring this episode. If you're not collecting your iOS crash reports with Crashlytics, you should start today!</p>
-</div>
 
 <h3>Show Notes</h3>
 <div id="notes"><%= @episode.notes_html.html_safe %></div>
